@@ -1,7 +1,5 @@
 <template>
-  <base-layout>
-    <router-view />
-  </base-layout>
+  <router-view />
 </template>
 
 <script>
@@ -11,14 +9,10 @@
    *
    * This is the entry point of the application.
    */
-  import Base from './layouts/base.vue';
   import store from '@/store';
   import { router } from './bootstrap';
 
   export default {
-    components: {
-      'base-layout': Base
-    },
     /**
      * The name of the application.
      */
