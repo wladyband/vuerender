@@ -1,44 +1,6 @@
 <template>
   <div>
-    <v-header>
-      <v-toolbar>
-        <v-nav-icon @click.native="toggleDrawer" />
-        <v-toolbar-title>Music DB</v-toolbar-title>
-        <v-toolbar-actions>
-          <v-toolbar-action>
-            <v-icon>exit_to_app</v-icon>
-          </v-toolbar-action>
-        </v-toolbar-actions>
-      </v-toolbar>
-      <transition name="slide-left">
-        <v-drawer v-if="drawerActive">
-          <v-drawer-header>
-            <v-nav-icon
-              variant="green"
-              @click.native="toggleDrawer"
-            />
-            <v-drawer-title>Music DB</v-drawer-title>
-          </v-drawer-header>
-          <v-drawer-body>
-            <v-navigation>
-              <v-navigation-item>
-                <v-navigation-link :route="{ name: 'artists.index' }">
-                  <v-navigation-content>Artists</v-navigation-content>
-                </v-navigation-link>
-                <v-navigation-link :route="{ name: 'albums.index' }">
-                  <v-navigation-content>Albums</v-navigation-content>
-                </v-navigation-link>
-                <v-navigation-link :route="{ name: 'songs.index' }">
-                  <v-navigation-content>Songs</v-navigation-content>
-                </v-navigation-link>
-              </v-navigation-item>
-            </v-navigation>
-          </v-drawer-body>
-          <v-drawer-footer>For educational purposes only</v-drawer-footer>
-        </v-drawer>
-      </transition>
-    </v-header>
-    <v-content>
+    <v-layout>
       <v-grid variant="container">
         <v-row variant="xs-center">
           <v-col :variants="['xs-9', 'md-4', 'lg-3']">
@@ -116,21 +78,21 @@
           </v-col>
         </v-row>
       </v-grid>
-    </v-content>
-    <transition name="fade">
-      <v-overlay
-        v-show="drawerActive"
-        @click.native="hideDrawer"
-      />
-    </transition>
+    </v-layout>
   </div>
 </template>
 <script>
+  import VLayout from '@/layouts/base.vue';
+
   export default {
     /**
      * The name of the layout.
      */
     name: 'artist-index',
+
+    components: {
+      'v-layout': VLayout
+    },
 
     data() {
       return {
