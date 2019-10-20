@@ -40,7 +40,7 @@
     </v-header>
     <v-content>
       <!-- The content of the page will be placed here -->
-      <slot></slot>
+      <router-view></router-view>
     </v-content>
     <transition name="fade">
       <v-overlay

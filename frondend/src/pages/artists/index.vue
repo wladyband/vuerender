@@ -1,6 +1,5 @@
 <template>
   <div>
-    <v-layout>
       <v-grid variant="container">
         <v-row variant="xs-center">
           <v-col :variants="['xs-9', 'md-4', 'lg-3']">
@@ -78,7 +77,6 @@
           </v-col>
         </v-row>
       </v-grid>
-    </v-layout>
   </div>
 </template>
 <script>
