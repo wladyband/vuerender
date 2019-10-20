@@ -1,9 +1,7 @@
 /* eslint-disable */
 <template>
   <div>
-    <v-layout>
       {{ pageName }}
-    </v-layout>
   </div>
 </template>
 <script>
